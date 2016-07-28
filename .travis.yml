@@ -20,3 +20,7 @@ after_script:
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
+
+addons:
+    code_climate:
+        repo_token: a4f84c56f6bbbd5e6525fbd2798abab8add65a318084e929c30b02e8d8531a47
