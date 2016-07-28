@@ -13,13 +13,13 @@ First you need [composer](https://getcomposer.org/) if you have not already. The
 ```php
 <?php
 
-use NodejsPhpFallback\less;
+use NodejsPhpFallback\Less;
 
-// Require the composer autload in your PHP file if it's not already.
+// Require the composer autoload in your PHP file if it's not already.
 // You do not need to if you use a framework with composer like Symfony, Laravel, etc.
 require 'vendor/autoload.php';
 
-$less = new less('path/to/my-less-file.less');
+$less = new Less('path/to/my-less-file.less');
 
 // Output to a file:
 $less->write('path/to/my-css-file.css');
@@ -32,11 +32,13 @@ header('Content-type: text/css');
 echo $less->getCss();
 
 // You can also get less code from a string:
-$less = new less('
-a
-  color blue
-  &:hover
-    color navy
+$less = new Less('
+a {
+  color: blue;
+  &:hover {
+    color: navy;
+  }
+}
 ');
 // Then write CSS with:
 $less->write('path/to/my-css-file.css');
@@ -44,5 +46,5 @@ $less->write('path/to/my-css-file.css');
 $cssContents = $less->getCss();
 
 // Pass true to the less constructor to minify the rendered CSS:
-$less = new less('path/to/my-less-file.styl', true);
+$less = new Less('path/to/my-less-file.styl', true);
 ```
