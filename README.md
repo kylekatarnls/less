@@ -25,11 +25,11 @@ $less = new Less('path/to/my-less-file.less');
 $less->write('path/to/my-css-file.css');
 
 // Get CSS contents:
-$cssContents = $less->getCss();
+$cssContents = $less->getResult();
 
 // Output to the browser:
 header('Content-type: text/css');
-echo $less->getCss();
+echo $less;
 
 // You can also get less code from a string:
 $less = new Less('
@@ -43,7 +43,7 @@ a {
 // Then write CSS with:
 $less->write('path/to/my-css-file.css');
 // or get it with:
-$cssContents = $less->getCss();
+$cssContents = $less->getResult();
 
 // Pass true to the less constructor to minify the rendered CSS:
 $less = new Less('path/to/my-less-file.styl', true);
