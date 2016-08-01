@@ -9,7 +9,7 @@
         }
     ],
     "require": {
-        "nodejs-php-fallback/nodejs-php-fallback": "^1.2",
+        "nodejs-php-fallback/nodejs-php-fallback": "^1.2.5",
         "oyejorge/less.php": "^1.7"
     },
     "extra": {
