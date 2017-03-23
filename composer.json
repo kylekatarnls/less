@@ -10,7 +10,7 @@
     ],
     "require": {
         "nodejs-php-fallback/nodejs-php-fallback": "^1.2.5",
-        "kylekatarnls/less.php": "^1.7.14"
+        "kylekatarnls/less.php": "^1.7.0.14"
     },
     "extra": {
         "npm": [
