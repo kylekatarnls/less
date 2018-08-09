@@ -14,10 +14,14 @@ php:
   - hhvm
 
 matrix:
-    include:
-        - php: 5.3
-          node_js: 9
-          dist: precise
+  include:
+    - php: 5.3
+      dist: precise
+
+before_install:
+  - npm i -g npm@6.1.0
+  - nvm install 9.8.0
+  - nvm use 9.8.0
 
 before_script:
   - travis_retry composer self-update
@@ -35,5 +39,5 @@ after_success:
   - bash <(curl -s https://codecov.io/bash)
 
 addons:
-    code_climate:
-        repo_token: a4f84c56f6bbbd5e6525fbd2798abab8add65a318084e929c30b02e8d8531a47
+  code_climate:
+    repo_token: a4f84c56f6bbbd5e6525fbd2798abab8add65a318084e929c30b02e8d8531a47
