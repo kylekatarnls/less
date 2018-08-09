@@ -18,13 +18,18 @@ class Less extends Wrapper
     {
         $file = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'compilation.css';
 
-        $this->execModuleScript(
+        $error = $this->execModuleScript(
             'less',
             'bin/lessc',
             ($this->compress ? '--clean-css ' : '') .
             escapeshellarg($this->getPath('source.less')) . ' ' .
             escapeshellarg($file)
         );
+        clearstatcache();
+        if (!file_exists($file)) {
+            throw new \ErrorException("Less error: $error");
+        }
+
         $css = file_get_contents($file);
         unlink($file);
 
